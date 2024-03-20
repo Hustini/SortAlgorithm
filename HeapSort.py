@@ -1,3 +1,9 @@
+
+CHOICE = {'N':2,
+          'P':4,
+          'G':5,
+          'V':6}
+
 def heapify(arr, n, i, sort_by):
     largest = i
     left = 2 * i + 1
@@ -17,7 +23,8 @@ def heapify(arr, n, i, sort_by):
 
 def heap_sort(arr, col):
     n = len(arr)
-    sort_by = 4
+    sort_by = CHOICE[col]
+
 
     for i in range(n // 2, -1, -1):
         heapify(arr, n, i, sort_by)
