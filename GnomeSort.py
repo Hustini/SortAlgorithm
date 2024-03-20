@@ -6,7 +6,7 @@ CHOICE = {'N': 2,
 
 def gnome_sort(arr, col):
     n = len(arr)
-    sort_by = col
+    sort_by = CHOICE[col]
     index = 0
     while index < n:
         if index == 0:
