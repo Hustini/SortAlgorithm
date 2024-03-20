@@ -22,18 +22,18 @@ def main():
 
     user_choice = menu()
 
-    if user_choice[1] == 'b'.upper():
+    if user_choice[1].upper() == 'B':
         start = time.perf_counter()
-        if user_choice[0] == 'n'.upper():
+        if user_choice[0].upper() == 'N':
             bubble_sort(unsorted_list, 2)
-        if user_choice[0] == 'p'.upper():
+        if user_choice[0].upper() == 'P':
             bubble_sort(unsorted_list, 4)
-        if user_choice[0] == 'g'.upper():
+        if user_choice[0].upper() == 'G':
             bubble_sort(unsorted_list, 5)
-        if user_choice[0] == 'v'.upper():
+        if user_choice[0].upper() == 'V':
             bubble_sort(unsorted_list, 6)
         end = time.perf_counter()
-        print(f'Values in list: {len(unsorted_list)}\nTime: {end - start}')
+        print(f'Time: {end - start}')
 
 
 if __name__ == '__main__':
