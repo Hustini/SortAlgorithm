@@ -1,26 +1,29 @@
-def heapify(arr, n, i):
+def heapify(arr, n, i, sort_by):
     largest = i
     left = 2 * i + 1
     right = 2 * i + 2
 
-    if left < n and arr[i] < arr[left]:
+    if left < n and arr[i][sort_by] < arr[left][sort_by]:
         largest = left
 
-    if right < n and arr[largest] < arr[right]:
+    if right < n and arr[largest][sort_by] < arr[right][sort_by]:
         largest = right
 
     if largest != i:
         (arr[i], arr[largest]) = (arr[largest], arr[i])
 
-        heapify(arr, n, largest)
+        heapify(arr, n, largest, sort_by)
 
 
 def heap_sort(arr, col):
     n = len(arr)
+    sort_by = 4
 
     for i in range(n // 2, -1, -1):
-        heapify(arr, n, i)
+        heapify(arr, n, i, sort_by)
 
     for i in range(n - 1, 0, -1):
         (arr[i], arr[0]) = (arr[0], arr[i])
-        heapify(arr, i, 0)
+        heapify(arr, i, 0, sort_by)
+
+    return arr
