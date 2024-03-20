@@ -10,7 +10,6 @@ def bubble_sort(list, param):
             if list[i][param] > list[i + 1][param]:
                 list[i], list[i + 1] = list[i + 1], list[i]
                 changed = True
-        print(list)
         if not changed:
             sorted = True
     print(f'Sorted list: {list}')
