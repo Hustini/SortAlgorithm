@@ -38,6 +38,7 @@ def main():
         sorted_list = gnome_sort(unsorted_list, user_choice[0])
         end = time.perf_counter()
     elif user_choice[1].upper() == 'Q':
+        sorted_list = None
         start = time.perf_counter()
         if user_choice[0].upper() == 'N':
             print(quick_sort(unsorted_list, 2))
