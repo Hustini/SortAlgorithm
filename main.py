@@ -1,6 +1,7 @@
 import csv
 import time
 from BubbleSort import bubble_sort
+from HeapSort import heap_sort
 
 
 def menu():
@@ -24,16 +25,15 @@ def main():
 
     if user_choice[1].upper() == 'B':
         start = time.perf_counter()
-        if user_choice[0].upper() == 'N':
-            bubble_sort(unsorted_list, 2)
-        if user_choice[0].upper() == 'P':
-            bubble_sort(unsorted_list, 4)
-        if user_choice[0].upper() == 'G':
-            bubble_sort(unsorted_list, 5)
-        if user_choice[0].upper() == 'V':
-            bubble_sort(unsorted_list, 6)
+        sorted_list = bubble_sort(unsorted_list, user_choice[0])
         end = time.perf_counter()
-        print(f'Time: {end - start}')
+    elif user_choice[1].upper() == 'H':
+        start = time.perf_counter()
+        sorted_list = heap_sort(unsorted_list, user_choice[0])
+        end = time.perf_counter()
+    print(f'Time: {end - start}')
+    print(f'Sorted list: {sorted_list}')
+
 
 
 if __name__ == '__main__':
