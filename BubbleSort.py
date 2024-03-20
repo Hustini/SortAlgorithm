@@ -1,8 +1,14 @@
 import time
 import csv
 
+CHOICE = {'N': 2,
+          'P': 4,
+          'G': 5,
+          'V': 6}
+
 
 def bubble_sort(list, param):
+    param = CHOICE[param]
     sorted = False
     while not sorted:
         changed = False
