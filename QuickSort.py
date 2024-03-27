@@ -9,7 +9,6 @@ def quick_sort(list, param):
 
     if len(list) > 1:
         pivot = list[-1][param]
-        print(pivot)
         for i in list:
             if i[param] < pivot:
                 left.append(i)
