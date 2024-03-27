@@ -53,7 +53,23 @@ def main():
     print(f'Sort: {sorted_list}')
 
 
-
 if __name__ == '__main__':
-    main()
-
+    unsorted_list = []
+    file = open('data/SortSmall.txt')
+    data = csv.reader(file, delimiter=',')
+    index = 0
+    for row in data:
+        index = 0
+        for index, value in enumerate(row):
+            if index == 4:
+                row[index] = int(value)
+            elif index == 5:
+                pass
+            elif index == 6:
+                row[index] = float(value)
+            else:
+                pass
+            index += 1
+        unsorted_list.append(row)
+        print(row)
+    file.close()
